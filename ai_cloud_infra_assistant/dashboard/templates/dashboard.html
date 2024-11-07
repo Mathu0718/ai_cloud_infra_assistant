@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud Monitoring Dashboard</title>
+</head>
+<body>
+    <h1>Cloud Instance Monitoring</h1>
+    <table border="1">
+        <tr>
+            <th>Instance ID</th>
+            <th>Status</th>
+            <th>CPU Usage</th>
+        </tr>
+        {% if instances %}
+            {% for instance in instances %}
+                <p>{{ instance.name }} - {{ instance.status }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No instances available.</p>
+        {% endif %}
+
+    </table>
+</body>
+</html>
